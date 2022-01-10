@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "coal-expert",
+  "private_key_id": "2b62d5ee75f260bffc326a1d16c9bdce0f9eea1b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCdMmykTm3e+Qwk\nO8trZbOpy9QCBeA6CSvDU9zvQSICzfXjQ7wm3XYsGSekeSpfGmi1vqkJdQpcCaF1\n1wKpQR1p0JLFE50NTA8kIWooyyvhhjclSGw5txBOEg4/Y2/GlYuU4jDF2/DBslQ+\nD0t+iA9/eQNxGL4dgCYDpIANmToC43bHod9QIzIqiurQEd9js3yhHncMlQnXPNbM\nEoVkz2abpN8EyZUTfGlBLe79VWCcmo7YZ5Xrw8uZ5tPiR7Zsk+oBVOpIzi4celxX\nn9Xwkxu10WcaEJHYIycSiyuMWjbwPkBpn+GJHd++jLvOEoa0DRuKz9ncIqfMQTw4\nZolPozINAgMBAAECggEARg0TdwDwW13WeEshMmHm93K6rpAZxSMTGn9DxGbdFizc\nN4OW1Cb6o1ouXVAVfr4RDXTCdVFv5WXxSscfC3fV+LKWxTYhVaygTrSJT1aC3oRm\nDLpCaFHY9UF8kejpBbDcu+M0YufJWTfz7Jf6R4+wgFjYHM0u44yY5CSpX+X5gRFT\na6ZB30BW8Ujs4l7r1j4cka7ELOGxk6pRtgs8dcRzI2LGp1bWySmVsbFpej/BHyLL\n4NUNrW3Hs2X2ZjabuaVXQhwa+TJwn2jgwNcT+8rx8xQZZOXoQEOKR+5kELKUKQzl\neUcW/jO+71MD0ifi+kKVBfp55nk0OTE7W9KDEb1rDQKBgQDT/hZKioCYHgVDfFL/\nmrP/ro0rALwQQpzjCP8MW9XkVhvmNX4wD+eRfJOSNIchfUaGo/hUViJda1UxZeFZ\nwfQrKkFeatXnA3bdtNonFHBfBvlYwZJ2HTG3shCAs5HrZ+eoHTROjCjafDqOVhBb\nl+DGaJi+Y6uJplI9VgQ75ITHIwKBgQC91Faq0mVjxEboZogzftLhqFZbtqoVZkXq\nzOTezcx40KDyDygRao6D7CBRMv/HIXfAeGCl8Bi4ek6LXpRCYosw4H8HmZXpV4jR\nf+4qC1kT0CTmbVNrHnYHIcgTnN0dWYnBWK2qIrREh1nI7zJ7vCZO3r3sc8QZoWJ1\n2dI0jpJNDwKBgQCfDAWLXUhHWFaYoCDhFh8vl7Tf64gtJtzv1OMNUaUyz4vU9pM6\n2ePhmjZZPcGYVZXhFAoOtCTKM+nRyt78aXCYJfavMLZUwJugkLwPD92S3febKHeK\n2DJh4F1TQeYbWHRMA8UnnS5VZVjFSzqwjU0dboISbVLYTglrbSp2COe5QwKBgDU0\nDhZSYZhUqor4MbQ9F12nkIyj5YeZ4n6sbnkDtQsnbfRpyxEWjFrtEyGu6YEmICoR\nkwTvBf6uSNVG7MauV9SbFv9KTHnZzr7o3Bdslsq2y6DJg1fCcdIN5cWZcV+IeNN3\nxzSoBV4vkTp/z+ZeFV6FjzV2PL/yO2ZMZl3Ul6yBAoGAXQX4vwWWqQDbOvNCWkOk\nWvO5Q0MrkPuf6Vb3cCV9ZnBLFALUZTI73KB60WoSkjByTky+po074k0v7qTPWlHR\nh5I1FfLERLoSq051k7TjRivlQ1NHjpWVFFDMLijPM3pJdEK6LNTF0qlUtkSM6kHN\n3lR7RuqQW9mDLKZneb5Y/Ok=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-xg46t@coal-expert.iam.gserviceaccount.com",
+  "client_id": "103524166466347836362",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-xg46t%40coal-expert.iam.gserviceaccount.com"
+}
