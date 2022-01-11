@@ -16,22 +16,26 @@ const GetShipData = async (req, res) => {
         }
         );
         console.log(arr);
-    },[db]);
-
-    res.json(arr);
+        res.json(arr);
+    },[db]);    
     
   }
 
   const AddShip = async (req, res) => {
 
+    console.log(req.body);
+
     var shipData = req.body.data;
 
-    db.collection('Ships').doc(shipData.id).set(shipData);
+    var result = await db.collection('Ships').doc(shipData.id).set(shipData);
 
-    res.json(arr);
+    console.log("Ship Added to List with Ship Id : " + shipData.id);
+
+    res.json({status: 'ok'});
     
   }
 
   module.exports = {
-      GetShipData
+      GetShipData,
+      AddShip
   }
