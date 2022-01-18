@@ -7,6 +7,8 @@ const {
 const shortid = require('shortid')
 const cors = require('cors')
 const bodyParser = require('body-parser');
+const { checkUserInfo, saveUsrInfo, getUsrInfo } = require('../controllers/userOperations');
+const { orderSuccess } = require('../controllers/orderProcess');
 
 
 const router = express.Router();
@@ -22,6 +24,14 @@ router.use(cors())
   router.post('/set-ship', AddShip);
 
   router.get('/get-ship-data', GetShipData)
+
+  router.get('/check-user-info', checkUserInfo)
+
+  router.get('/save-user-info', saveUsrInfo)
+
+  router.get('/get-user-info', getUsrInfo)
+
+  router.get('/order-success', orderSuccess)
 
 
 module.exports = {
