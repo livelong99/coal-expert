@@ -31,7 +31,7 @@ const saveUsrInfo = async (req, res) => {
 }
 
 const getUsrInfo = async (req, res) => {
-  var uid = req.body.uid;
+  var uid = req.query.uid;
 
   var usrInfo = await db.collection('Users').doc(uid).get();
 
