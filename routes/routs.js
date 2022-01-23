@@ -27,7 +27,7 @@ router.use(cors())
 
   router.get('/check-user-info', checkUserInfo)
 
-  router.get('/save-user-info', saveUsrInfo)
+  router.post('/save-user-info', saveUsrInfo)
 
   router.get('/get-user-info', getUsrInfo)
 

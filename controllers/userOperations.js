@@ -33,7 +33,10 @@ const saveUsrInfo = async (req, res) => {
 const getUsrInfo = async (req, res) => {
   var uid = req.query.uid;
 
-  var usrInfo = await db.collection('Users').doc(uid).get();
+  var usrInfo = await db.collection('Users').doc(uid).get()
+  .then(snapshot => {
+    res.json({data: snapshot.data});
+  });
 
   res.json({data: usrInfo});
 }
