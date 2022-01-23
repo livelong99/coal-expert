@@ -35,10 +35,8 @@ const getUsrInfo = async (req, res) => {
 
   var usrInfo = await db.collection('Users').doc(uid).get()
   .then(snapshot => {
-    res.json({data: snapshot.data});
+    res.json({data: snapshot.data()});
   });
-
-  res.json({data: usrInfo});
 }
 
 module.exports = {
