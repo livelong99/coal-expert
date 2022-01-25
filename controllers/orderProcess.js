@@ -1,8 +1,42 @@
 const shortid = require('shortid');
 const firebase = require('../db');
+const Razorpay = require('razorpay')
 
 
 var db = firebase.firestore();
+
+const razorpay = new Razorpay({
+    key_id: config.key_id,
+    key_secret: config.key_secret
+})
+
+
+const setOrder = async (req, res, next) => {
+
+    console.log(req);
+    const amount = Math.floor(req.body.amount);
+    const currency = 'INR'
+    const options = {
+        amount: (amount*100).toString(),
+        currency: currency,
+        receipt: shortid.generate()
+    }
+
+    try {
+        const response = await razorpay.orders.create(options)
+        console.log(response)
+        res.json({
+            id: response.id,
+            currency: response.currency,
+            amount: response.amount
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error.message);
+    }
+}
+
+
 
 const orderSuccess = async (req, res) => {
     
@@ -39,5 +73,6 @@ const orderSuccess = async (req, res) => {
 }
 
 module.exports = {
-    orderSuccess
+    orderSuccess,
+    setOrder
 }
