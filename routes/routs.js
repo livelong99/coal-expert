@@ -7,8 +7,15 @@ const {
 const shortid = require('shortid')
 const cors = require('cors')
 const bodyParser = require('body-parser');
-const { checkUserInfo, saveUsrInfo, getUsrInfo } = require('../controllers/userOperations');
-const { orderSuccess, setOrder } = require('../controllers/orderProcess');
+const { 
+  checkUserInfo, 
+  saveUsrInfo, 
+  getUsrInfo 
+} = require('../controllers/userOperations');
+const { 
+  orderSuccess, 
+  setOrder 
+} = require('../controllers/orderProcess');
 
 
 const router = express.Router();
@@ -33,7 +40,7 @@ router.use(cors())
 
   router.get('/order-success', orderSuccess)
 
-  router.get('/get-orderId', setOrder)
+  router.post('/get-orderId', setOrder)
 
 
 module.exports = {

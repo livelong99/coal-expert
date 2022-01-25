@@ -12,8 +12,7 @@ const razorpay = new Razorpay({
 
 
 const setOrder = async (req, res, next) => {
-
-    console.log(req);
+    
     const amount = Math.floor(req.body.amount);
     const currency = 'INR'
     const options = {
