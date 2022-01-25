@@ -1,6 +1,7 @@
 const shortid = require('shortid');
 const firebase = require('../db');
 const Razorpay = require('razorpay')
+const config = require("../config")
 
 
 var db = firebase.firestore();
@@ -12,7 +13,7 @@ const razorpay = new Razorpay({
 
 
 const setOrder = async (req, res, next) => {
-    
+
     const amount = Math.floor(req.body.amount);
     const currency = 'INR'
     const options = {
