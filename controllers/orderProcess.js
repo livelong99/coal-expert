@@ -44,7 +44,8 @@ const orderSuccess = async (req, res) => {
     var shipId = req.body.shipId;
     var amount = req.body.amount;
     var quantity = req.body.quantity;
-    var orderId = req.body.orderId;
+    var orderId = req.body.orderId;    
+    var transactionId = req.body.transactionId;
 
 
     var shipData = await db.collection('Ships').doc(shipId).get()
@@ -58,6 +59,7 @@ const orderSuccess = async (req, res) => {
         quantity: quantity,
         amount: amount,
         orderId: orderId,
+        transactionId: transactionId,
         status: 0
     }
 
