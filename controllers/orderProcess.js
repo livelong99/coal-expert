@@ -43,11 +43,12 @@ const orderSuccess = async (req, res) => {
     var userId = req.body.userId;
     var shipId = req.body.shipId;
     var amount = req.body.amount;
-    var quantity = req.body.quantity
+    var quantity = req.body.quantity;
     var orderId = req.body.orderId;
 
 
-    var shipData = await db.collection('Ships').doc(shipId).get();
+    var shipData = await db.collection('Ships').doc(shipId).get()
+    .then(snapshot => snapshot.data());
 
     shipData.quantity = parseInt(shipData.quantity) - parseInt(quantity);
 
