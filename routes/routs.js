@@ -38,7 +38,7 @@ router.use(cors())
 
   router.get('/get-user-info', getUsrInfo)
 
-  router.get('/order-success', orderSuccess)
+  router.post('/order-success', orderSuccess)
 
   router.post('/get-orderId', setOrder)
 
