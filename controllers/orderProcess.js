@@ -42,19 +42,20 @@ const orderSuccess = async (req, res) => {
     
     var userId = req.body.userId;
     var shipId = req.body.shipId;
-    var amount = req.body.bidAmt;
+    var amount = req.body.amount;
+    var quantity = req.body.quantity
+    var orderId = req.body.orderId;
 
 
     var shipData = await db.collection('Ships').doc(shipId).get();
 
-    shipData.quantity = parseInt(shipData.quantity) - parseInt(amount);
-
-    var orderId = shortid.generate();
+    shipData.quantity = parseInt(shipData.quantity) - parseInt(quantity);
 
     var IncOrder = {
         UserId: userId,
-        shipData: {...shipData, quantity: amount},
-        quantity: amount,
+        shipData: {...shipData, quantity: quantity},
+        quantity: quantity,
+        amount: amount,
         orderId: orderId,
         status: 0
     }
@@ -63,9 +64,8 @@ const orderSuccess = async (req, res) => {
 
     await db.collection('Orders').doc(orderId).set(IncOrder);
 
-    await db.collection('UserActivity').doc(userId).collection('IncompleteOrders').doc(orderId).set({
+    await db.collection('UserActivity').doc(userId).collection('Orders').doc(orderId).set({
         orderId : orderId,
-        status: 0
     });
 
     res.json({status: "ok"});
