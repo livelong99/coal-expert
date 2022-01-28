@@ -21,11 +21,9 @@ const checkUserInfo = async (req, res) => {
 }
 
 const saveUsrInfo = async (req, res) => {
-
-    var uid = req.body.uid;
     var userDet = req.body.userDet;
 
-    await db.collection('Users').doc(uid).set(userDet);
+    await db.collection('Users').doc(userDet.id).set(userDet);
 
     res.json({status: "ok"});
 }
