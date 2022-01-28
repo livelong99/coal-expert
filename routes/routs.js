@@ -14,7 +14,8 @@ const {
 } = require('../controllers/userOperations');
 const { 
   orderSuccess, 
-  setOrder 
+  setOrder, 
+  getOrders
 } = require('../controllers/orderProcess');
 
 
@@ -37,6 +38,8 @@ router.use(cors())
   router.post('/save-user-info', saveUsrInfo)
 
   router.get('/get-user-info', getUsrInfo)
+
+  router.get('/get-orders', getOrders)
 
   router.post('/order-success', orderSuccess)
 

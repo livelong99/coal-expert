@@ -36,6 +36,37 @@ const setOrder = async (req, res, next) => {
     }
 }
 
+const getOrders = async (req, res) => {
+    
+    const uid = req.query.uid;
+
+    var orderIds = [];
+
+    await db.collection('UserActivity').doc(uid).collection('Orders')
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.docs.map((doc) => {
+            orderIds.push(doc.id)
+        }
+        );
+        console.log(orderIds);
+    },[db]); 
+
+    var orders = []
+
+    for (let index = 0; index < orderIds.length; index++) {
+        const order = await db.collection('Orders').doc(orderIds[index]).get().then((snapshot) => (snapshot.data()));
+        orders.push(order)        
+    }
+
+    // orderIds.map((id) => {
+    //     var order = await ;
+    //     orders.push(order);
+    // })
+
+    res.json(orders)
+}
+
 
 
 const orderSuccess = async (req, res) => {
@@ -77,5 +108,6 @@ const orderSuccess = async (req, res) => {
 
 module.exports = {
     orderSuccess,
-    setOrder
+    setOrder,
+    getOrders
 }
