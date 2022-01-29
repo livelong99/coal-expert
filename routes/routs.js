@@ -43,6 +43,8 @@ router.use(cors())
 
   router.post('/order-success', orderSuccess)
 
+  router.post('/verify-payment', orderSuccess)
+
   router.post('/get-orderId', setOrder)
 
 

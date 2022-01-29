@@ -67,6 +67,19 @@ const getOrders = async (req, res) => {
     res.json(orders)
 }
 
+const verifyPaymnet = async (req, res) => {
+    var transactionId = req.body.transactionId;
+    var order = req.body.order;
+
+    order.transactionId = transactionId;
+    order.status = 0;
+
+    await db.collection('Orders').doc(order.orderId).set(order);
+
+    res.json({status: "ok"});
+
+}
+
 
 
 const orderSuccess = async (req, res) => {
@@ -109,5 +122,6 @@ const orderSuccess = async (req, res) => {
 module.exports = {
     orderSuccess,
     setOrder,
-    getOrders
+    getOrders,
+    verifyPaymnet
 }
