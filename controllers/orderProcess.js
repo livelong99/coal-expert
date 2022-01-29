@@ -91,7 +91,7 @@ const orderSuccess = async (req, res) => {
         amount: amount,
         orderId: orderId,
         transactionId: transactionId,
-        status: 0
+        status: transactionId=='null' ? 0 : -1
     }
 
     await db.collection('Ships').doc(shipId).set(shipData);
