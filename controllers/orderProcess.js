@@ -36,6 +36,19 @@ const setOrder = async (req, res, next) => {
     }
 }
 
+const getAllOrders = async (req, res) => {
+    
+    await db.collection('Orders').get()
+    .then((querySnapshot) => {
+        arr = []
+        querySnapshot.docs.map((doc) => {
+            arr.push(doc.data())
+        }
+        );
+        res.json(arr);
+    })
+}
+
 const getOrders = async (req, res) => {
     
     const uid = req.query.uid;

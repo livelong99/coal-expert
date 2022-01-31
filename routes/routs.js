@@ -16,7 +16,8 @@ const {
   orderSuccess, 
   setOrder, 
   getOrders,
-  verifyPaymnet
+  verifyPaymnet,
+  getAllOrders
 } = require('../controllers/orderProcess');
 
 
@@ -41,6 +42,8 @@ router.use(cors())
   router.get('/get-user-info', getUsrInfo)
 
   router.get('/get-orders', getOrders)
+
+  router.get('/get-all-orders', getAllOrders)
 
   router.post('/order-success', orderSuccess)
 
