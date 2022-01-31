@@ -45,7 +45,7 @@ const getAllOrders = async (req, res) => {
             arr.push(doc.data())
         }
         );
-        res.json(arr);
+        res.json({data : arr});
     })
 }
 
@@ -136,5 +136,6 @@ module.exports = {
     orderSuccess,
     setOrder,
     getOrders,
-    verifyPaymnet
+    verifyPaymnet,
+    getAllOrders
 }
