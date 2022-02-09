@@ -108,7 +108,7 @@ const orderSuccess = async (req, res) => {
     var shipData = await db.collection('Ships').doc(shipId).get()
     .then(snapshot => snapshot.data());
 
-    shipData.quantity = parseInt(shipData.quantity) - parseInt(quantity);
+    shipData.quantity = parseFloat(shipData.quantity) - parseFloat(quantity);
 
     var IncOrder = {
         UserId: userId,

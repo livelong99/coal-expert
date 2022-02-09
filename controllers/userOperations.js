@@ -14,8 +14,7 @@ const checkUserInfo = async (req, res) => {
                 res.json({result: true});
               else{
                 res.json({result: false});
-              }
-                                      
+              }                                      
           }
       )
 }
