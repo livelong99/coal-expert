@@ -35,7 +35,22 @@ const GetShipData = async (req, res) => {
     
   }
 
+  const Remove = async (req, res) => {
+
+    console.log(req.body);
+
+    var shipId = req.body.id;
+
+    var result = await db.collection('Ships').doc(shipId).delete()
+
+    console.log("Ship Deleted!");
+
+    res.json({status: 'ok'});
+    
+  }
+
   module.exports = {
       GetShipData,
-      AddShip
+      AddShip,
+      Remove
   }

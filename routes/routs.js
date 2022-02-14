@@ -2,7 +2,8 @@ const express = require('express');
 const Razorpay = require('razorpay')
 const {
   GetShipData,
-  AddShip
+  AddShip,
+  Remove
 } = require("../controllers/adminPortal")
 const shortid = require('shortid')
 const cors = require('cors')
@@ -32,6 +33,8 @@ router.use(cors())
   });
 
   router.post('/set-ship', AddShip);
+
+  router.post('/del-ship', Remove);
 
   router.get('/get-ship-data', GetShipData)
 
