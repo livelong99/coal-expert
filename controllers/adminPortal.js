@@ -49,8 +49,21 @@ const GetShipData = async (req, res) => {
     
   }
 
+  const verifyOrder = async (req, res) => {
+    var order = req.body.order;
+
+
+    order.status = 1;
+
+    await db.collection('Orders').doc(order.orderId).set(order);
+
+    res.json({status: "ok"});
+
+}
+
   module.exports = {
       GetShipData,
       AddShip,
-      Remove
+      Remove,
+      verifyOrder      
   }

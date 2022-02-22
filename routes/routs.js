@@ -3,7 +3,8 @@ const Razorpay = require('razorpay')
 const {
   GetShipData,
   AddShip,
-  Remove
+  Remove,
+  verifyOrder
 } = require("../controllers/adminPortal")
 const shortid = require('shortid')
 const cors = require('cors')
@@ -51,6 +52,8 @@ router.use(cors())
   router.post('/order-success', orderSuccess)
 
   router.post('/verify-payment', verifyPaymnet)
+
+  router.post('/verify-order', verifyOrder)
 
   router.post('/get-orderId', setOrder)
 
