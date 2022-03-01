@@ -12,7 +12,8 @@ const bodyParser = require('body-parser');
 const { 
   checkUserInfo, 
   saveUsrInfo, 
-  getUsrInfo 
+  getUsrInfo, 
+  getUsers
 } = require('../controllers/userOperations');
 const { 
   orderSuccess, 
@@ -57,6 +58,7 @@ router.use(cors())
 
   router.post('/get-orderId', setOrder)
 
+  router.get('/get-all-users', getUsers)
 
 module.exports = {
     routes : router

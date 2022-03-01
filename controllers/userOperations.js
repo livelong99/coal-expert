@@ -36,8 +36,26 @@ const getUsrInfo = async (req, res) => {
   });
 }
 
+const getUsers = async (req, res) => {
+
+  let arr = [];
+
+    db.collection('Users')
+    .get()
+    .then((querySnapshot) => {
+        let cartP = 0;
+        querySnapshot.docs.map((doc) => {
+            arr.push({ id: doc.id, value: doc.data() })
+        }
+        );
+        console.log(arr);
+        res.json(arr);
+    },[db]);    
+}
+
 module.exports = {
   checkUserInfo,
   saveUsrInfo,
-  getUsrInfo
+  getUsrInfo,
+  getUsers
 }
